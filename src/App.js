@@ -6,7 +6,7 @@ function App() {
   const [usersWithPostsAndComments, setUsersWithPostsAndComments] = useState(
     []
   );
-  // useEffect to fetch data when the component mounts
+  // useEffect to fetch data
   useEffect(() => {
     // Async function to fetch data
     const fetchData = async () => {
@@ -51,14 +51,14 @@ function App() {
         console.error("Error fetching data:", error);
       }
     };
-    // Call the fetchData function when the component mounts
+    // Call the fetchData function
 
     fetchData();
   }, []);
 
   return (
     <div className="app-container">
-      <h1>Users, Posts dhe nga nje Comment per secilin post</h1>
+      <h1>Users, Posts dhe nga 1 Comment per secilin post</h1>
       {usersWithPostsAndComments.map(({ user, postsWithComments }) => (
         <div key={user.id} className="user-container">
           <h2>User: {user.name}</h2>
